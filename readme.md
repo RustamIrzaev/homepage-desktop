@@ -4,7 +4,7 @@ Desktop wrapper for [Homepage dashboard](https://gethomepage.dev/latest/) we all
 On Windows, Linux and Mac.
 
 <p align="center">
-  <img width="339" alt="logo" src="https://github.com/RustamIrzaev/homepage-desktop-private/assets/352703/ea20083c-b615-4189-9094-61f7d6ad879f">
+  <img width="339" alt="image" src="https://github.com/RustamIrzaev/homepage-desktop/assets/352703/991ab9e6-1865-4fb8-993c-6e0b09f53a43">
 </p>
 
 # Installation
