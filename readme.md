@@ -9,7 +9,7 @@ On Windows, Linux and Mac.
 
 # Installation
 
-> At this point you have to clone and build the application by yourself. Although, it is quite easy. Binaries will be available, but can't say when exactly :/
+> At this point you have to clone and build the application by yourself. Although, it is quite easy. Binaries are not planned at this moment :/
 
 To do so, you need `Node` to be installed.
 
