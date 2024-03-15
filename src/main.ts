@@ -10,9 +10,9 @@ import {
 import path from 'path';
 import Store, { ConfigType } from './config';
 
-if (require('electron-squirrel-startup')) {
-	app.quit();
-}
+// if (require('electron-squirrel-startup')) {
+// 	app.quit();
+// }
 
 const store = new Store();
 
