@@ -4,16 +4,20 @@ import path from 'path';
 
 const configName = 'homepage-desktop-app.json';
 
+export type Version = 'v1';
+
 export type ConfigType = {
 	url: string;
 	showTrayIcon: boolean;
-	version: 'v1';
+	compactMode: boolean;
+	version: Version;
 };
 
 function defaultConfig(): ConfigType {
 	return {
 		url: '',
 		showTrayIcon: true,
+		compactMode: false,
 		version: 'v1',
 	};
 }
@@ -38,7 +42,7 @@ export default class Store {
 		return this.data[key as keyof ConfigType];
 	}
 
-	set(key: keyof ConfigType, value: any) {
+	set(key: keyof ConfigType, value: string | boolean | Version) {
 		if (key == 'version') return;
 
 		this.data[key] = value;

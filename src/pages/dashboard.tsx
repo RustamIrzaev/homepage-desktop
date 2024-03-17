@@ -13,28 +13,33 @@ export default function Dashboard() {
 	const { getValue } = useAppConfig();
 	const [currentFilter, setCurrentFilter] = useState(filters[0]);
 
-	const { data: urlValue, isFetching: isConfigLoading } = useQuery({
+	const { data: config, isFetching: isConfigLoading } = useQuery({
 		queryKey: ['config-data'],
-		queryFn: async () => await getValue('url'),
+		queryFn: async () => {
+			const url = await getValue('url');
+			const compactMode = await getValue('compactMode');
+
+			return { url, compactMode };
+		},
 	});
 
 	const { data: servicesData, isFetching: isServicesFetching } = useQuery({
 		queryKey: ['service-data'],
-		queryFn: () => loadServices(urlValue as string),
-		enabled: !!urlValue,
+		queryFn: () => loadServices(config.url as string),
+		enabled: !!config,
 	});
 
 	const { data: bookmarksData, isFetching: isBookmarksFetching } = useQuery({
 		queryKey: ['bookmarks-data'],
-		queryFn: () => loadBookmarks(urlValue as string),
-		enabled: !!urlValue,
+		queryFn: () => loadBookmarks(config.url as string),
+		enabled: !!config,
 	});
 
 	if (isConfigLoading || isServicesFetching || isBookmarksFetching) {
 		return <div></div>;
 	}
 
-	if (!urlValue) {
+	if (!config) {
 		return <FirstRun />;
 	}
 
@@ -51,7 +56,7 @@ export default function Dashboard() {
 			/>
 
 			{(currentFilter === 'All' || currentFilter === 'Services') && (
-				<Services data={servicesData} />
+				<Services data={servicesData} compactMode={!!config.compactMode} />
 			)}
 
 			{(currentFilter === 'All' || currentFilter === 'Bookmarks') && (

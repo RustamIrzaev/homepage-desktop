@@ -4,7 +4,13 @@ import { HomepageService, ServiceData } from '../../models/service-model';
 // import * as siIcons from 'simple-icons';
 // import * as mdiIcons from '@mdi/js';
 
-export default function Services({ data }: { data: HomepageService[] }) {
+export default function Services({
+	data,
+	compactMode,
+}: {
+	data: HomepageService[];
+	compactMode?: boolean;
+}) {
 	return (
 		<div>
 			{data.map(item => (
@@ -14,13 +20,42 @@ export default function Services({ data }: { data: HomepageService[] }) {
 						<span className='text-sm text-slate-700 w-fit'>service</span>
 					</h3>
 
-					<dl className='mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
-						{item?.services?.map(item => (
-							<ServiceCard key={item.href} item={item} />
-						))}
+					<dl className='mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+						{item?.services?.map(item =>
+							compactMode ? (
+								<ServiceCardCompact key={item.href} item={item} />
+							) : (
+								<ServiceCard key={item.href} item={item} />
+							)
+						)}
 					</dl>
 				</div>
 			))}
+		</div>
+	);
+}
+
+function ServiceCardCompact({ item }: { item: ServiceData }) {
+	return (
+		<div
+			key={item.href}
+			className='overflow-hidden rounded-lg px-2 pb-1 pt-1 shadow shadow-black bg-gradient-to-r from-slate-700/20 to-slate-900 hover:shadow-slate-500'
+		>
+			<div className='flex items-center justify-between w-full'>
+				<p className='ml-4 truncate text-base font-medium text-slate-100'>
+					{item.name}
+				</p>
+				<div className='text-sm flex items-center justify-end'>
+					<Link
+						to={`external://${item.href}`}
+						target='_blank'
+						className='font-medium text-slate-400 hover:text-green-500 flex gap-x-1 items-center justify-end'
+					>
+						<ArrowTopRightOnSquareIcon className='h-4 w-4 text-slate-600' />{' '}
+						Open
+					</Link>
+				</div>
+			</div>
 		</div>
 	);
 }

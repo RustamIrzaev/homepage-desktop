@@ -12,7 +12,7 @@ export default function Bookmarks({ data }: { data: HomepageBookmark[] }) {
 						<span className='text-sm text-slate-700 w-fit'>bookmark</span>
 					</h3>
 
-					<dl className='mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3'>
+					<dl className='mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
 						{item?.bookmarks?.map(item => (
 							<BookmarkCard key={item.href} item={item} />
 						))}
