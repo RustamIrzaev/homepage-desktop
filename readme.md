@@ -5,6 +5,7 @@ On Windows, Linux and Mac.
 
 <p align="center">
   <img width="339" alt="image" src="https://github.com/RustamIrzaev/homepage-desktop/assets/352703/991ab9e6-1865-4fb8-993c-6e0b09f53a43">
+   <img width="350" alt="image2_1" src="https://github.com/RustamIrzaev/homepage-desktop/assets/352703/c474f940-b5cd-4073-bf84-54256664ce45">
 </p>
 
 # Installation
