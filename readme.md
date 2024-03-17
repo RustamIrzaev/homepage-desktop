@@ -13,7 +13,7 @@ On Windows, Linux and Mac.
 
 To do so, you need `Node` to be installed.
 
-1. Clone the repository
+1. Clone the repository (or download sources from [Releases](https://github.com/RustamIrzaev/homepage-desktop/releases/tag/v0.1.2) and unpack)
 
    ```bash
    git clone https://github.com/RustamIrzaev/homepage-desktop.git
@@ -41,3 +41,15 @@ To do so, you need `Node` to be installed.
 # Configuration
 
 During the first run, the application will ask you to configure a single required parameter - `Homepage dashboard URL`. Specify the url and click 'Save'. Now your application is ready to be used.
+
+## All configuration parameters
+
+| Option                 | Description                                | Notes                           |
+| ---------------------- | ------------------------------------------ | ------------------------------- |
+| Homepage Dashboard URL | Specify the Homepage url                   | required                        |
+| Tray Icon              | Shows or hides the application tray icon   | application restart is required |
+| Compact UI             | Makes bookmarks and services look the same | -                               |
+
+# License
+
+Homepage Desktop is released under MIT license. See the [license file](license.md) for more information.
