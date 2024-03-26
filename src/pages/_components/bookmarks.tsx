@@ -5,7 +5,7 @@ import { BookmarkData, HomepageBookmark } from '../../models/bookmark-model';
 export default function Bookmarks({ data }: { data: HomepageBookmark[] }) {
 	return (
 		<div>
-			{data.map(item => (
+			{data?.map(item => (
 				<div key={item.name} className='mb-3'>
 					<h3 className='text-xl text-center font-semibold leading-6 text-slate-400 flex items-center'>
 						<span className='w-full text-start'>{item.name}</span>

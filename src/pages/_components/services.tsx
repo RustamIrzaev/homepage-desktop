@@ -13,7 +13,7 @@ export default function Services({
 }) {
 	return (
 		<div>
-			{data.map(item => (
+			{data?.map(item => (
 				<div key={item.name} className='mb-8'>
 					<h3 className='text-xl text-center font-semibold leading-6 text-slate-400 flex items-center'>
 						<span className='w-full text-start'>{item.name}</span>

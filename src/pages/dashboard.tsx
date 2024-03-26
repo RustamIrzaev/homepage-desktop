@@ -39,7 +39,7 @@ export default function Dashboard() {
 		return <div></div>;
 	}
 
-	if (!config) {
+	if (!config || !config.url) {
 		return <FirstRun />;
 	}
 
