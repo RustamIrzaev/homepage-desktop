@@ -27,7 +27,7 @@ const createWindow = () => {
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
 		},
-		icon: path.join(__dirname, `assets/laptop_image`),
+		icon: path.join(__dirname, `/../../assets/laptop_image.ico`),
 	});
 
 	if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
